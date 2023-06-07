@@ -196,6 +196,244 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading">#</a></h2>
 </section>
+<section id="module-terra_safe.data_handling">
+<span id="terra-safe-data-handling-module"></span><h2>terra_safe.data_handling module<a class="headerlink" href="#module-terra_safe.data_handling" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.correct_position_values">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">correct_position_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normal_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fine_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#correct_position_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.correct_position_values" title="Permalink to this definition">#</a></dt>
+<dd><p>Adds the Latitude/Longitude and the LatitudeFine/LongitudeFine Values for all values in the Array to get more precise
+Latitude and Longitude Values</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>normal_value</strong> – Array of Latitude/Longitude Values</p></li>
+<li><p><strong>fine_value</strong> – Array of LatitudeFine/LongitudeFine Values</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Array of a more precise Array for Latitude/Longitude</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.corrected_value_to_dict">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">corrected_value_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#corrected_value_to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.corrected_value_to_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a Dictionary for the corrected Sensor with name as Key and the Sub-Elements reference_time and data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>name</strong> – String with the Name of the corrected Sensor</p></li>
+<li><p><strong>reference_time</strong> – Array of time values</p></li>
+<li><p><strong>data</strong> – Array of the data of the corrected Sensor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary with one Element that contains the new corrected Sensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.get_geo_data">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_geo_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_geo_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_geo_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Splits the longitude and latitude and into list with the size 100 elements for the api request to get the terrain height</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>long</strong> – list of the longitude values form the flight</p></li>
+<li><p><strong>lat</strong> – list of the latitude values form the flight</p></li>
+<li><p><strong>time</strong> – list of the time values form the flight</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>position_elevation Dictionary with the Terrain height for given latitude and longitude</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.get_height_above_groundlevel">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_height_above_groundlevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_elevation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_height_above_groundlevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_height_above_groundlevel" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the height above groundlevel and appends it to the position_elevation dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sensor_dict</strong> – dictionary with the data and time for each sensor</p></li>
+<li><p><strong>position_elevation</strong> – dictionary with the terrain height for each time</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>position_elevation dictionary with the height above groundlevel appended to the dictionary as Height</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.get_limits">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_limits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_limits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_limits" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the limit for the sinkrate for the elevation between 20 and 3500ft and returns a dictionary with the values
+for the elevation and the sinkrate limits</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>vertvel_threshold_dict dictionary with the sinkrate limits</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.get_list_elevation">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_list_elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_list_elevation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_list_elevation" title="Permalink to this definition">#</a></dt>
+<dd><p>Reqeust the terrain height form ‘opentopodata.org’ for max 100 values in one request and creates a dictionary element
+with the elevation, latitude, longitude and time for each request and appends this dictionary element to the elevation
+dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>lat_list</strong> – latitude list max 100 elements</p></li>
+<li><p><strong>long_list</strong> – longitude list max 100 elements</p></li>
+<li><p><strong>timestamp</strong> – time list max 100 elements</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary with elevation, latitude, longitude and time for each request in the lists</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.get_missing_flight_data">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_missing_flight_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_missing_flight_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_missing_flight_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Gets the position_elevation dictionary with height above groundlevel and terrain height without the calibration phase</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sensor_dictionary</strong> – Dictionary of all sensors used and there data and time</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>position_elevation Dictionary with height above groundlevel and terrain height without the calibration phase</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.read_and_downsample">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">read_and_downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensor_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#read_and_downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.read_and_downsample" title="Permalink to this definition">#</a></dt>
+<dd><p>Reads the Sensor Values and sample the data down to 1 Hz</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sensor_time</strong> – Array with the Time Values of the Sensor</p></li>
+<li><p><strong>sensor_data</strong> – Array with the Data of the Sensor</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Sampled Array of the time and Sampled Array of the Data</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.setup_sensor_dict">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">setup_sensor_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_sensors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#setup_sensor_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.setup_sensor_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Creates a empty subdictionary for each sensor that is in the list of sensors and returns the dictionary with all sensors
+and there subdictionaries.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>list_of_sensors</strong> – list of all sensors that should be used for the program</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>sensor_dictionary containing all sensors and there dictionaries which are empty</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.slice_calibrationphase">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">slice_calibrationphase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundspeed_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#slice_calibrationphase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.slice_calibrationphase" title="Permalink to this definition">#</a></dt>
+<dd><p>Remove the calibrationphase from the Data by checking the groundspeed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>groundspeed_data</strong> – Array of the Groundspeed Data</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>index of the first value where the Groundspeed is bigger than 50</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.data_handling.transform_data">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">transform_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#transform_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.transform_data" title="Permalink to this definition">#</a></dt>
+<dd><p>Fills a dictionary with the data and time for the sensors containt in the sensors_dict and also append the corrected
+Values for Latitude and Longitude to the dictionary</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>sensor_dict</strong> – dictionary with the sensor names of the sensor where the data should be stored</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary with the sensor names and there time and data values</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-terra_safe.main">
+<span id="terra-safe-main-module"></span><h2>terra_safe.main module<a class="headerlink" href="#module-terra_safe.main" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.main.fill_sensor_dict">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.main.</span></span><span class="sig-name descname"><span class="pre">fill_sensor_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_sensors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/main.html#fill_sensor_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.main.fill_sensor_dict" title="Permalink to this definition">#</a></dt>
+<dd><p>Calls each step for filling the sensor_dictionary and fills the sensor_dict with data</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>list_of_sensors</strong> – list with all sensor that should be used in this program</p></li>
+<li><p><strong>flight_id</strong> – string with the id for that flight in the stash</p></li>
+<li><p><strong>client</strong> – client object form the stash api to interact with the stash</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>dictionary sensor_dict containing each sensor form the sensor list and the data for that sensor</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-terra_safe.safety_handling">
+<span id="terra-safe-safety-handling-module"></span><h2>terra_safe.safety_handling module<a class="headerlink" href="#module-terra_safe.safety_handling" title="Permalink to this heading">#</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.safety_handling.check_below_rad_alt_max">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.safety_handling.</span></span><span class="sig-name descname"><span class="pre">check_below_rad_alt_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/safety_handling.html#check_below_rad_alt_max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.safety_handling.check_below_rad_alt_max" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks if the given altitude is between 3500 and 50</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>altitude</strong> – integer with the altitude</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Bool with True if the altitude is between 3500 and 50 else Bool with False</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.safety_handling.check_flight">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.safety_handling.</span></span><span class="sig-name descname"><span class="pre">check_flight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_elevation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertvel_threshold_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/safety_handling.html#check_flight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.safety_handling.check_flight" title="Permalink to this definition">#</a></dt>
+<dd><p>Checks for each value in the position_elevation dictionary if the active_sinkrate is bigger than the sinkrate_limit for
+that height.
+If its above the limit there will be a warning printed</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="terra_safe.safety_handling.get_sink_rate">
+<span class="sig-prename descclassname"><span class="pre">terra_safe.safety_handling.</span></span><span class="sig-name descname"><span class="pre">get_sink_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/safety_handling.html#get_sink_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.safety_handling.get_sink_rate" title="Permalink to this definition">#</a></dt>
+<dd><p>Calculates the sinkrate for a given altitude</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sinkrate for the given altitude</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
 <section id="module-terra_safe.stash_requests">
 <span id="terra-safe-stash-requests-module"></span><h2>terra_safe.stash_requests module<a class="headerlink" href="#module-terra_safe.stash_requests" title="Permalink to this heading">#</a></h2>
 <dl class="py function">
@@ -351,6 +589,30 @@ The series_connector_id must already exists in the dictionary for each sensor.</
             <ul>
 <li><a class="reference internal" href="#">terra_safe package</a><ul>
 <li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-terra_safe.data_handling">terra_safe.data_handling module</a><ul>
+<li><a class="reference internal" href="#terra_safe.data_handling.correct_position_values"><code class="docutils literal notranslate"><span class="pre">correct_position_values()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.corrected_value_to_dict"><code class="docutils literal notranslate"><span class="pre">corrected_value_to_dict()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.get_geo_data"><code class="docutils literal notranslate"><span class="pre">get_geo_data()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.get_height_above_groundlevel"><code class="docutils literal notranslate"><span class="pre">get_height_above_groundlevel()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.get_limits"><code class="docutils literal notranslate"><span class="pre">get_limits()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.get_list_elevation"><code class="docutils literal notranslate"><span class="pre">get_list_elevation()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.get_missing_flight_data"><code class="docutils literal notranslate"><span class="pre">get_missing_flight_data()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.read_and_downsample"><code class="docutils literal notranslate"><span class="pre">read_and_downsample()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.setup_sensor_dict"><code class="docutils literal notranslate"><span class="pre">setup_sensor_dict()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.slice_calibrationphase"><code class="docutils literal notranslate"><span class="pre">slice_calibrationphase()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.data_handling.transform_data"><code class="docutils literal notranslate"><span class="pre">transform_data()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-terra_safe.main">terra_safe.main module</a><ul>
+<li><a class="reference internal" href="#terra_safe.main.fill_sensor_dict"><code class="docutils literal notranslate"><span class="pre">fill_sensor_dict()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-terra_safe.safety_handling">terra_safe.safety_handling module</a><ul>
+<li><a class="reference internal" href="#terra_safe.safety_handling.check_below_rad_alt_max"><code class="docutils literal notranslate"><span class="pre">check_below_rad_alt_max()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.safety_handling.check_flight"><code class="docutils literal notranslate"><span class="pre">check_flight()</span></code></a></li>
+<li><a class="reference internal" href="#terra_safe.safety_handling.get_sink_rate"><code class="docutils literal notranslate"><span class="pre">get_sink_rate()</span></code></a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#module-terra_safe.stash_requests">terra_safe.stash_requests module</a><ul>
 <li><a class="reference internal" href="#terra_safe.stash_requests.get_data_series"><code class="docutils literal notranslate"><span class="pre">get_data_series()</span></code></a></li>
 <li><a class="reference internal" href="#terra_safe.stash_requests.get_data_series_id"><code class="docutils literal notranslate"><span class="pre">get_data_series_id()</span></code></a></li>

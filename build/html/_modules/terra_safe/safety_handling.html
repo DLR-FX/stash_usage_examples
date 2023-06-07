@@ -2,12 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 --><title>Python Module Index - Stash Usage Samples 0.0.1 documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>terra_safe.safety_handling - Stash Usage Samples 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -121,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Stash Usage Samples 0.0.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Stash Usage Samples 0.0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -141,12 +142,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
   <span class="sidebar-brand-text">Stash Usage Samples 0.0.1 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -154,7 +155,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="terra_safe.html">terra_safe package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../terra_safe.html">terra_safe package</a></li>
 </ul>
 
 </div>
@@ -188,51 +189,49 @@
           </label>
         </div>
         <article role="main">
-          
-<section class="domainindex-section">
-  <h1>Python Module Index</h1>
-  <div class="domainindex-jumpbox"><a href="#cap-t"><strong>t</strong></a></div>
-</section>
-<table class="domainindex-table">
-  <tr class="pcap">
-    <td></td><td>&#160;</td><td></td>
-  </tr>
-  <tr class="cap" id="cap-t">
-    <td></td><td><strong>t</strong></td><td></td>
-  </tr>
-  <tr>
-    <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-    <td>
-        <a href="terra_safe.html#module-terra_safe"><code class="xref">terra_safe</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.data_handling"><code class="xref">terra_safe.data_handling</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.main"><code class="xref">terra_safe.main</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.safety_handling"><code class="xref">terra_safe.safety_handling</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.stash_requests"><code class="xref">terra_safe.stash_requests</code></a></td><td>
-    <em></em></td>
-  </tr>
-</table>
+          <h1>Source code for terra_safe.safety_handling</h1><div class="highlight"><pre>
+<div class="viewcode-block" id="check_below_rad_alt_max"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.safety_handling.check_below_rad_alt_max">[docs]</a><span></span><span class="k">def</span> <span class="nf">check_below_rad_alt_max</span><span class="p">(</span><span class="n">altitude</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Checks if the given altitude is between 3500 and 50</span>
 
+<span class="sd">    :param altitude: integer with the altitude</span>
+
+<span class="sd">    :return: Bool with True if the altitude is between 3500 and 50 else Bool with False</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">if</span> <span class="mi">3500</span> <span class="o">&gt;</span> <span class="n">altitude</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">True</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="kc">False</span></div>
+
+
+<div class="viewcode-block" id="get_sink_rate"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.safety_handling.get_sink_rate">[docs]</a><span class="k">def</span> <span class="nf">get_sink_rate</span><span class="p">(</span><span class="n">ft</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculates the sinkrate for a given altitude</span>
+
+<span class="sd">    :return: sinkrate for the given altitude</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">sink_rate</span> <span class="o">=</span> <span class="mi">2000</span> <span class="o">+</span> <span class="p">((</span><span class="mi">6000</span> <span class="o">-</span> <span class="mi">2000</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3200</span> <span class="o">-</span> <span class="mi">720</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">ft</span> <span class="o">-</span> <span class="mi">720</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sink_rate</span></div>
+
+
+<div class="viewcode-block" id="check_flight"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.safety_handling.check_flight">[docs]</a><span class="k">def</span> <span class="nf">check_flight</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">,</span> <span class="n">vertvel_threshold_dict</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Checks for each value in the position_elevation dictionary if the active_sinkrate is bigger than the sinkrate_limit for</span>
+<span class="sd">    that height.</span>
+<span class="sd">    If its above the limit there will be a warning printed</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">for</span> <span class="n">position_elevation_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">)):</span>
+        <span class="k">if</span> <span class="n">position_elevation</span><span class="p">[</span><span class="n">position_elevation_index</span><span class="p">][</span><span class="s2">&quot;Vertvel&quot;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="mf">0.0</span> <span class="ow">and</span> <span class="n">check_below_rad_alt_max</span><span class="p">(</span>
+                <span class="n">position_elevation</span><span class="p">[</span><span class="n">position_elevation_index</span><span class="p">][</span><span class="s2">&quot;Height&quot;</span><span class="p">]):</span>
+            <span class="n">active_sinkrate</span> <span class="o">=</span> <span class="n">position_elevation</span><span class="p">[</span><span class="n">position_elevation_index</span><span class="p">][</span><span class="s2">&quot;Vertvel&quot;</span><span class="p">]</span> <span class="o">*</span> <span class="o">-</span><span class="mf">1.0</span>
+            <span class="n">height_int</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">[</span><span class="n">position_elevation_index</span><span class="p">][</span>
+                                 <span class="s2">&quot;Height&quot;</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">active_sinkrate</span> <span class="o">&gt;=</span> <span class="n">vertvel_threshold_dict</span><span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">height_int</span><span class="p">)][</span><span class="s2">&quot;sink_rate_limit&quot;</span><span class="p">]:</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Warning&quot;</span><span class="p">)</span></div>
+</pre></div>
         </article>
       </div>
       <footer>
@@ -264,9 +263,9 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     </body>
 </html>

@@ -2,12 +2,13 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 --><title>Python Module Index - Stash Usage Samples 0.0.1 documentation</title>
-<link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
+    <!-- Generated with Sphinx 6.2.1 and Furo 2023.05.20 -->
+        <title>terra_safe.main - Stash Usage Samples 0.0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=e6660623a769aa55fea372102b9bf3151b292993" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
 
@@ -121,7 +122,7 @@
       </label>
     </div>
     <div class="header-center">
-      <a href="index.html"><div class="brand">Stash Usage Samples 0.0.1 documentation</div></a>
+      <a href="../../index.html"><div class="brand">Stash Usage Samples 0.0.1 documentation</div></a>
     </div>
     <div class="header-right">
       <div class="theme-toggle-container theme-toggle-header">
@@ -141,12 +142,12 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   
   <span class="sidebar-brand-text">Stash Usage Samples 0.0.1 documentation</span>
   
-</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
@@ -154,7 +155,7 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="terra_safe.html">terra_safe package</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../terra_safe.html">terra_safe package</a></li>
 </ul>
 
 </div>
@@ -188,51 +189,48 @@
           </label>
         </div>
         <article role="main">
-          
-<section class="domainindex-section">
-  <h1>Python Module Index</h1>
-  <div class="domainindex-jumpbox"><a href="#cap-t"><strong>t</strong></a></div>
-</section>
-<table class="domainindex-table">
-  <tr class="pcap">
-    <td></td><td>&#160;</td><td></td>
-  </tr>
-  <tr class="cap" id="cap-t">
-    <td></td><td><strong>t</strong></td><td></td>
-  </tr>
-  <tr>
-    <td><img src="_static/minus.png" class="toggler"
-              id="toggle-1" style="display: none" alt="-" /></td>
-    <td>
-        <a href="terra_safe.html#module-terra_safe"><code class="xref">terra_safe</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.data_handling"><code class="xref">terra_safe.data_handling</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.main"><code class="xref">terra_safe.main</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.safety_handling"><code class="xref">terra_safe.safety_handling</code></a></td><td>
-    <em></em></td>
-  </tr>
-  <tr class="cg-1">
-    <td></td>
-    <td>&#160;&#160;&#160;
-        <a href="terra_safe.html#module-terra_safe.stash_requests"><code class="xref">terra_safe.stash_requests</code></a></td><td>
-    <em></em></td>
-  </tr>
-</table>
+          <h1>Source code for terra_safe.main</h1><div class="highlight"><pre>
+<span></span><span class="kn">from</span> <span class="nn">stashclient.client</span> <span class="kn">import</span> <span class="n">Client</span>
 
+<span class="kn">from</span> <span class="nn">terra_safe.data_handling</span> <span class="kn">import</span> <span class="n">transform_data</span><span class="p">,</span> <span class="n">get_missing_flight_data</span><span class="p">,</span> <span class="n">get_limits</span><span class="p">,</span> <span class="n">setup_sensor_dict</span>
+<span class="kn">from</span> <span class="nn">terra_safe.safety_handling</span> <span class="kn">import</span> <span class="n">check_flight</span>
+<span class="kn">from</span> <span class="nn">terra_safe.stash_requests</span> <span class="kn">import</span> <span class="n">get_series_connector_id</span><span class="p">,</span> <span class="n">get_time_series</span><span class="p">,</span> <span class="n">get_data_series</span><span class="p">,</span> \
+    <span class="n">get_data_series_id</span><span class="p">,</span> <span class="n">get_time_series_id</span>
+
+
+<div class="viewcode-block" id="fill_sensor_dict"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.main.fill_sensor_dict">[docs]</a><span class="k">def</span> <span class="nf">fill_sensor_dict</span><span class="p">(</span><span class="n">list_of_sensors</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calls each step for filling the sensor_dictionary and fills the sensor_dict with data</span>
+
+<span class="sd">    :param list_of_sensors: list with all sensor that should be used in this program</span>
+<span class="sd">    :param flight_id: string with the id for that flight in the stash</span>
+<span class="sd">    :param client: client object form the stash api to interact with the stash</span>
+
+
+<span class="sd">    :return: dictionary sensor_dict containing each sensor form the sensor list and the data for that sensor</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">setup_sensor_dict</span><span class="p">(</span><span class="n">list_of_sensors</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">get_series_connector_id</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">get_time_series_id</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">get_time_series</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">get_data_series_id</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">client</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">get_data_series</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">sensor_dict</span></div>
+
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">instance</span> <span class="o">=</span> <span class="s2">&quot;prod&quot;</span>
+    <span class="n">list_of_sensors</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;IRH_ALT&quot;</span><span class="p">,</span> <span class="s2">&quot;IRH_LAT&quot;</span><span class="p">,</span> <span class="s2">&quot;IRH_LONG&quot;</span><span class="p">,</span> <span class="s2">&quot;IRH_LATFINE&quot;</span><span class="p">,</span> <span class="s2">&quot;IRH_LONGFINE&quot;</span><span class="p">,</span> <span class="s2">&quot;IRH_VERTVEL&quot;</span><span class="p">,</span> <span class="s2">&quot;IRH_GS&quot;</span><span class="p">]</span>
+    <span class="n">flight_name</span> <span class="o">=</span> <span class="s1">&#39;2022-03-16_F22-04_Training&#39;</span>
+    <span class="n">client</span> <span class="o">=</span> <span class="n">Client</span><span class="o">.</span><span class="n">from_instance_name</span><span class="p">(</span><span class="n">instance</span><span class="p">)</span>
+    <span class="n">flight_id</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">id</span><span class="p">(</span><span class="n">flight_name</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">fill_sensor_dict</span><span class="p">(</span><span class="n">list_of_sensors</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>
+    <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">transform_data</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">)</span>
+    <span class="n">position_elevation</span> <span class="o">=</span> <span class="n">get_missing_flight_data</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">)</span>
+    <span class="n">vertvel_threshold</span> <span class="o">=</span> <span class="n">get_limits</span><span class="p">()</span>
+    <span class="n">check_flight</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">,</span> <span class="n">vertvel_threshold</span><span class="p">)</span>
+</pre></div>
         </article>
       </div>
       <footer>
@@ -264,9 +262,9 @@
       
     </aside>
   </div>
-</div><script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/sphinx_highlight.js"></script>
-    <script src="_static/scripts/furo.js"></script>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
     </body>
 </html>
