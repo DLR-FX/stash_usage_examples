@@ -8,14 +8,13 @@ from terra_safe.stash_requests import get_series_connector_id, get_time_series, 
 
 def fill_sensor_dict(list_of_sensors, flight_id, client):
     """
-    Calls each step for filling the sensor_dictionary and fills the sensor_dict with data
+    This function calls each step to fill the `sensor_dict` with data from the `list_of_sensors`.
 
-    :param list_of_sensors: list with all sensor that should be used in this program
-    :param flight_id: string with the id for that flight in the stash
-    :param client: client object form the stash api to interact with the stash
+    :param list_of_sensors: A list containing all the sensors to be used in the program.
+    :param flight_id: A string representing the ID for the flight in the stash.
+    :param client: A client object from the stash API used to interact with the stash.
 
-
-    :return: dictionary sensor_dict containing each sensor form the sensor list and the data for that sensor
+    :return: A dictionary (`sensor_dict`) containing each sensor from the sensor list and the corresponding data.
     """
     sensor_dict = setup_sensor_dict(list_of_sensors)
     sensor_dict = get_series_connector_id(sensor_dict, flight_id, client)

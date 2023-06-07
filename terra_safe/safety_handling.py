@@ -1,11 +1,12 @@
 def check_below_rad_alt_max(altitude):
     """
-    Checks if the given altitude is between 3500 and 50
+    This function checks if the given altitude is within the range of 3500 and 50.
 
-    :param altitude: integer with the altitude
+    :param altitude: An integer representing the altitude value.
 
-    :return: Bool with True if the altitude is between 3500 and 50 else Bool with False
+    :return: A boolean value. Returns True if the altitude is between 3500 and 50, otherwise returns False.
     """
+
 
     if 3500 > altitude >= 50:
         return True
@@ -15,9 +16,10 @@ def check_below_rad_alt_max(altitude):
 
 def get_sink_rate(ft):
     """
-    Calculates the sinkrate for a given altitude
+    Calculates the sink rate for a given altitude.
 
-    :return: sinkrate for the given altitude
+    :param height: The altitude in feet.
+    :return: The sink rate for the given altitude.
     """
 
     sink_rate = 2000 + ((6000 - 2000) / (3200 - 720)) * (ft - 720)
@@ -26,9 +28,11 @@ def get_sink_rate(ft):
 
 def check_flight(position_elevation, vertvel_threshold_dict):
     """
-    Checks for each value in the position_elevation dictionary if the active_sinkrate is bigger than the sinkrate_limit for
-    that height.
-    If its above the limit there will be a warning printed
+    Checks each value in the position_elevation dictionary to determine if the active sink rate is greater than the sink rate limit for that height. If the sink rate exceeds the limit, a warning will be printed.
+
+    :param position_elevation: A dictionary with the information for each timestamp of the flight.
+    :param vertvel_threshold_dict: A dictionary with the altitude and the corresponding sink rate limit for that altitude.
+
     """
 
     for position_elevation_index in range(len(position_elevation)):
