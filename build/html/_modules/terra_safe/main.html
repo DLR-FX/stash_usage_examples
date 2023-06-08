@@ -200,14 +200,13 @@
 
 <div class="viewcode-block" id="fill_sensor_dict"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.main.fill_sensor_dict">[docs]</a><span class="k">def</span> <span class="nf">fill_sensor_dict</span><span class="p">(</span><span class="n">list_of_sensors</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">client</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calls each step for filling the sensor_dictionary and fills the sensor_dict with data</span>
+<span class="sd">    This function calls each step to fill the `sensor_dict` with data from the `list_of_sensors`.</span>
 
-<span class="sd">    :param list_of_sensors: list with all sensor that should be used in this program</span>
-<span class="sd">    :param flight_id: string with the id for that flight in the stash</span>
-<span class="sd">    :param client: client object form the stash api to interact with the stash</span>
+<span class="sd">    :param list_of_sensors: A list containing all the sensors to be used in the program.</span>
+<span class="sd">    :param flight_id: A string representing the ID for the flight in the stash.</span>
+<span class="sd">    :param client: A client object from the stash API used to interact with the stash.</span>
 
-
-<span class="sd">    :return: dictionary sensor_dict containing each sensor form the sensor list and the data for that sensor</span>
+<span class="sd">    :return: A dictionary (`sensor_dict`) containing each sensor from the sensor list and the corresponding data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">setup_sensor_dict</span><span class="p">(</span><span class="n">list_of_sensors</span><span class="p">)</span>
     <span class="n">sensor_dict</span> <span class="o">=</span> <span class="n">get_series_connector_id</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">flight_id</span><span class="p">,</span> <span class="n">client</span><span class="p">)</span>

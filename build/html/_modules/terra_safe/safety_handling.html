@@ -192,12 +192,13 @@
           <h1>Source code for terra_safe.safety_handling</h1><div class="highlight"><pre>
 <div class="viewcode-block" id="check_below_rad_alt_max"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.safety_handling.check_below_rad_alt_max">[docs]</a><span></span><span class="k">def</span> <span class="nf">check_below_rad_alt_max</span><span class="p">(</span><span class="n">altitude</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Checks if the given altitude is between 3500 and 50</span>
+<span class="sd">    This function checks if the given altitude is within the range of 3500 and 50.</span>
 
-<span class="sd">    :param altitude: integer with the altitude</span>
+<span class="sd">    :param altitude: An integer representing the altitude value.</span>
 
-<span class="sd">    :return: Bool with True if the altitude is between 3500 and 50 else Bool with False</span>
+<span class="sd">    :return: A boolean value. Returns True if the altitude is between 3500 and 50, otherwise returns False.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 
     <span class="k">if</span> <span class="mi">3500</span> <span class="o">&gt;</span> <span class="n">altitude</span> <span class="o">&gt;=</span> <span class="mi">50</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
@@ -207,9 +208,10 @@
 
 <div class="viewcode-block" id="get_sink_rate"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.safety_handling.get_sink_rate">[docs]</a><span class="k">def</span> <span class="nf">get_sink_rate</span><span class="p">(</span><span class="n">ft</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculates the sinkrate for a given altitude</span>
+<span class="sd">    Calculates the sink rate for a given altitude.</span>
 
-<span class="sd">    :return: sinkrate for the given altitude</span>
+<span class="sd">    :param height: The altitude in feet.</span>
+<span class="sd">    :return: The sink rate for the given altitude.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="n">sink_rate</span> <span class="o">=</span> <span class="mi">2000</span> <span class="o">+</span> <span class="p">((</span><span class="mi">6000</span> <span class="o">-</span> <span class="mi">2000</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">3200</span> <span class="o">-</span> <span class="mi">720</span><span class="p">))</span> <span class="o">*</span> <span class="p">(</span><span class="n">ft</span> <span class="o">-</span> <span class="mi">720</span><span class="p">)</span>
@@ -218,9 +220,11 @@
 
 <div class="viewcode-block" id="check_flight"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.safety_handling.check_flight">[docs]</a><span class="k">def</span> <span class="nf">check_flight</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">,</span> <span class="n">vertvel_threshold_dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Checks for each value in the position_elevation dictionary if the active_sinkrate is bigger than the sinkrate_limit for</span>
-<span class="sd">    that height.</span>
-<span class="sd">    If its above the limit there will be a warning printed</span>
+<span class="sd">    Checks each value in the position_elevation dictionary to determine if the active sink rate is greater than the sink rate limit for that height. If the sink rate exceeds the limit, a warning will be printed.</span>
+
+<span class="sd">    :param position_elevation: A dictionary with the information for each timestamp of the flight.</span>
+<span class="sd">    :param vertvel_threshold_dict: A dictionary with the altitude and the corresponding sink rate limit for that altitude.</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">for</span> <span class="n">position_elevation_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">)):</span>

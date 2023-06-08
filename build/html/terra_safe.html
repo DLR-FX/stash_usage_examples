@@ -201,17 +201,16 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.correct_position_values">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">correct_position_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">normal_value</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fine_value</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#correct_position_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.correct_position_values" title="Permalink to this definition">#</a></dt>
-<dd><p>Adds the Latitude/Longitude and the LatitudeFine/LongitudeFine Values for all values in the Array to get more precise
-Latitude and Longitude Values</p>
+<dd><p>Combines the Latitude/Longitude values and the LatitudeFine/LongitudeFine values from the arrays to obtain more precise latitude and longitude coordinates.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>normal_value</strong> – Array of Latitude/Longitude Values</p></li>
-<li><p><strong>fine_value</strong> – Array of LatitudeFine/LongitudeFine Values</p></li>
+<li><p><strong>normal_value</strong> – An array of Latitude/Longitude values.</p></li>
+<li><p><strong>fine_value</strong> – An array of LatitudeFine/LongitudeFine values.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Array of a more precise Array for Latitude/Longitude</p>
+<dd class="field-even"><p>An array of more precise latitude or longitude coordinates.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -219,17 +218,17 @@ Latitude and Longitude Values</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.corrected_value_to_dict">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">corrected_value_to_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reference_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#corrected_value_to_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.corrected_value_to_dict" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates a Dictionary for the corrected Sensor with name as Key and the Sub-Elements reference_time and data</p>
+<dd><p>Creates a dictionary for the corrected sensor using the sensor name as the key. The dictionary includes the sub-elements ‘reference_time’ and ‘data’.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>name</strong> – String with the Name of the corrected Sensor</p></li>
-<li><p><strong>reference_time</strong> – Array of time values</p></li>
-<li><p><strong>data</strong> – Array of the data of the corrected Sensor</p></li>
+<li><p><strong>name</strong> – A string representing the name of the corrected sensor.</p></li>
+<li><p><strong>reference_time</strong> – An array of time values.</p></li>
+<li><p><strong>data</strong> – An array containing the data of the corrected sensor.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>dictionary with one Element that contains the new corrected Sensor</p>
+<dd class="field-even"><p>A dictionary with one element that represents the new corrected sensor.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -237,17 +236,17 @@ Latitude and Longitude Values</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.get_geo_data">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_geo_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">long</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">time</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_geo_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_geo_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Splits the longitude and latitude and into list with the size 100 elements for the api request to get the terrain height</p>
+<dd><p>Splits the longitude and latitude values into lists with a size of 100 elements each for the API request to retrieve the terrain height.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>long</strong> – list of the longitude values form the flight</p></li>
-<li><p><strong>lat</strong> – list of the latitude values form the flight</p></li>
-<li><p><strong>time</strong> – list of the time values form the flight</p></li>
+<li><p><strong>long</strong> – A list of longitude values from the flight.</p></li>
+<li><p><strong>lat</strong> – A list of latitude values from the flight.</p></li>
+<li><p><strong>time</strong> – A list of time values from the flight.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>position_elevation Dictionary with the Terrain height for given latitude and longitude</p>
+<dd class="field-even"><p>A position_elevation dictionary with the terrain height for the given latitude and longitude.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -255,16 +254,16 @@ Latitude and Longitude Values</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.get_height_above_groundlevel">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_height_above_groundlevel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_elevation</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_height_above_groundlevel"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_height_above_groundlevel" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculates the height above groundlevel and appends it to the position_elevation dictionary</p>
+<dd><p>Calculates the height above ground level and appends it to the position_elevation dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_dict</strong> – dictionary with the data and time for each sensor</p></li>
-<li><p><strong>position_elevation</strong> – dictionary with the terrain height for each time</p></li>
+<li><p><strong>sensor_dict</strong> – A dictionary containing the data and time for each sensor.</p></li>
+<li><p><strong>position_elevation</strong> – A dictionary containing the terrain height for each time.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>position_elevation dictionary with the height above groundlevel appended to the dictionary as Height</p>
+<dd class="field-even"><p>The position_elevation dictionary with the height above ground level appended as ‘Height’.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -272,11 +271,10 @@ Latitude and Longitude Values</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.get_limits">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_limits</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_limits"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_limits" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculates the limit for the sinkrate for the elevation between 20 and 3500ft and returns a dictionary with the values
-for the elevation and the sinkrate limits</p>
+<dd><p>Calculates the sink rate limits for elevations between 20 and 3500 ft and returns a dictionary with the elevation and corresponding sink rate limits.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>vertvel_threshold_dict dictionary with the sinkrate limits</p>
+<dd class="field-odd"><p>A vertvel_threshold_dict dictionary with the sink rate limits.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -284,19 +282,17 @@ for the elevation and the sinkrate limits</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.get_list_elevation">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_list_elevation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">lat_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">long_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestamp</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_list_elevation"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_list_elevation" title="Permalink to this definition">#</a></dt>
-<dd><p>Reqeust the terrain height form ‘opentopodata.org’ for max 100 values in one request and creates a dictionary element
-with the elevation, latitude, longitude and time for each request and appends this dictionary element to the elevation
-dictionary</p>
+<dd><p>Requests the terrain height from ‘opentopodata.org’ for a maximum of 100 values in one request. It creates a dictionary element containing the elevation, latitude, longitude, and time for each request and appends this dictionary element to the elevation dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>lat_list</strong> – latitude list max 100 elements</p></li>
-<li><p><strong>long_list</strong> – longitude list max 100 elements</p></li>
-<li><p><strong>timestamp</strong> – time list max 100 elements</p></li>
+<li><p><strong>lat_list</strong> – A list of latitude values (maximum 100 elements).</p></li>
+<li><p><strong>long_list</strong> – A list of longitude values (maximum 100 elements).</p></li>
+<li><p><strong>timestamp</strong> – A list of time values (maximum 100 elements).</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>dictionary with elevation, latitude, longitude and time for each request in the lists</p>
+<dd class="field-even"><p>A dictionary with elevation, latitude, longitude, and time for each request in the lists.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -304,13 +300,13 @@ dictionary</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.get_missing_flight_data">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">get_missing_flight_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#get_missing_flight_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.get_missing_flight_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Gets the position_elevation dictionary with height above groundlevel and terrain height without the calibration phase</p>
+<dd><p>Retrieves the position_elevation dictionary with height above ground level and terrain height, excluding the calibration phase.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sensor_dictionary</strong> – Dictionary of all sensors used and there data and time</p>
+<dd class="field-odd"><p><strong>sensor_dictionary</strong> – A dictionary containing the data and time for all used sensors.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>position_elevation Dictionary with height above groundlevel and terrain height without the calibration phase</p>
+<dd class="field-even"><p>The position_elevation dictionary with height above ground level and terrain height, excluding the calibration phase.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -318,16 +314,16 @@ dictionary</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.read_and_downsample">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">read_and_downsample</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_time</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sensor_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#read_and_downsample"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.read_and_downsample" title="Permalink to this definition">#</a></dt>
-<dd><p>Reads the Sensor Values and sample the data down to 1 Hz</p>
+<dd><p>Reads the sensor values and downsamples the data to 1 Hz.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_time</strong> – Array with the Time Values of the Sensor</p></li>
-<li><p><strong>sensor_data</strong> – Array with the Data of the Sensor</p></li>
+<li><p><strong>sensor_time</strong> – An array containing the time values of the sensor.</p></li>
+<li><p><strong>sensor_data</strong> – An array containing the data of the sensor.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Sampled Array of the time and Sampled Array of the Data</p>
+<dd class="field-even"><p>Sampled array of the time values and sampled array of the data.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -335,14 +331,13 @@ dictionary</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.setup_sensor_dict">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">setup_sensor_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_sensors</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#setup_sensor_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.setup_sensor_dict" title="Permalink to this definition">#</a></dt>
-<dd><p>Creates a empty subdictionary for each sensor that is in the list of sensors and returns the dictionary with all sensors
-and there subdictionaries.</p>
+<dd><p>Creates an empty sub-dictionary for each sensor in the list_of_sensors and returns the dictionary with all sensors and their corresponding sub-dictionaries.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>list_of_sensors</strong> – list of all sensors that should be used for the program</p>
+<dd class="field-odd"><p><strong>list_of_sensors</strong> – A list of sensors to be used in the program.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>sensor_dictionary containing all sensors and there dictionaries which are empty</p>
+<dd class="field-even"><p>A sensor_dictionary containing all sensors and their respective empty dictionaries.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -350,13 +345,13 @@ and there subdictionaries.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.slice_calibrationphase">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">slice_calibrationphase</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">groundspeed_data</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#slice_calibrationphase"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.slice_calibrationphase" title="Permalink to this definition">#</a></dt>
-<dd><p>Remove the calibrationphase from the Data by checking the groundspeed</p>
+<dd><p>Removes the calibration phase from the data by checking the groundspeed.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>groundspeed_data</strong> – Array of the Groundspeed Data</p>
+<dd class="field-odd"><p><strong>groundspeed_data</strong> – An array of groundspeed data.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>index of the first value where the Groundspeed is bigger than 50</p>
+<dd class="field-even"><p>The index of the first value where the groundspeed is greater than 50.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -364,14 +359,13 @@ and there subdictionaries.</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.data_handling.transform_data">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.data_handling.</span></span><span class="sig-name descname"><span class="pre">transform_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/data_handling.html#transform_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.data_handling.transform_data" title="Permalink to this definition">#</a></dt>
-<dd><p>Fills a dictionary with the data and time for the sensors containt in the sensors_dict and also append the corrected
-Values for Latitude and Longitude to the dictionary</p>
+<dd><p>Populates a dictionary with the data and time for the sensors contained in sensor_dict. Additionally, the corrected values for latitude and longitude are appended to the dictionary.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>sensor_dict</strong> – dictionary with the sensor names of the sensor where the data should be stored</p>
+<dd class="field-odd"><p><strong>sensor_dict</strong> – A dictionary containing the sensor names where the data should be stored.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>dictionary with the sensor names and there time and data values</p>
+<dd class="field-even"><p>A dictionary with the sensor names and their corresponding time and data values.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -382,17 +376,17 @@ Values for Latitude and Longitude to the dictionary</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.main.fill_sensor_dict">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.main.</span></span><span class="sig-name descname"><span class="pre">fill_sensor_dict</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">list_of_sensors</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/main.html#fill_sensor_dict"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.main.fill_sensor_dict" title="Permalink to this definition">#</a></dt>
-<dd><p>Calls each step for filling the sensor_dictionary and fills the sensor_dict with data</p>
+<dd><p>This function calls each step to fill the <cite>sensor_dict</cite> with data from the <cite>list_of_sensors</cite>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>list_of_sensors</strong> – list with all sensor that should be used in this program</p></li>
-<li><p><strong>flight_id</strong> – string with the id for that flight in the stash</p></li>
-<li><p><strong>client</strong> – client object form the stash api to interact with the stash</p></li>
+<li><p><strong>list_of_sensors</strong> – A list containing all the sensors to be used in the program.</p></li>
+<li><p><strong>flight_id</strong> – A string representing the ID for the flight in the stash.</p></li>
+<li><p><strong>client</strong> – A client object from the stash API used to interact with the stash.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>dictionary sensor_dict containing each sensor form the sensor list and the data for that sensor</p>
+<dd class="field-even"><p>A dictionary (<cite>sensor_dict</cite>) containing each sensor from the sensor list and the corresponding data.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -403,13 +397,13 @@ Values for Latitude and Longitude to the dictionary</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.safety_handling.check_below_rad_alt_max">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.safety_handling.</span></span><span class="sig-name descname"><span class="pre">check_below_rad_alt_max</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/safety_handling.html#check_below_rad_alt_max"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.safety_handling.check_below_rad_alt_max" title="Permalink to this definition">#</a></dt>
-<dd><p>Checks if the given altitude is between 3500 and 50</p>
+<dd><p>This function checks if the given altitude is within the range of 3500 and 50.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>altitude</strong> – integer with the altitude</p>
+<dd class="field-odd"><p><strong>altitude</strong> – An integer representing the altitude value.</p>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>Bool with True if the altitude is between 3500 and 50 else Bool with False</p>
+<dd class="field-even"><p>A boolean value. Returns True if the altitude is between 3500 and 50, otherwise returns False.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -417,18 +411,27 @@ Values for Latitude and Longitude to the dictionary</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.safety_handling.check_flight">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.safety_handling.</span></span><span class="sig-name descname"><span class="pre">check_flight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">position_elevation</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vertvel_threshold_dict</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/safety_handling.html#check_flight"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.safety_handling.check_flight" title="Permalink to this definition">#</a></dt>
-<dd><p>Checks for each value in the position_elevation dictionary if the active_sinkrate is bigger than the sinkrate_limit for
-that height.
-If its above the limit there will be a warning printed</p>
+<dd><p>Checks each value in the position_elevation dictionary to determine if the active sink rate is greater than the sink rate limit for that height. If the sink rate exceeds the limit, a warning will be printed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>position_elevation</strong> – A dictionary with the information for each timestamp of the flight.</p></li>
+<li><p><strong>vertvel_threshold_dict</strong> – A dictionary with the altitude and the corresponding sink rate limit for that altitude.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.safety_handling.get_sink_rate">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.safety_handling.</span></span><span class="sig-name descname"><span class="pre">get_sink_rate</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ft</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/safety_handling.html#get_sink_rate"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.safety_handling.get_sink_rate" title="Permalink to this definition">#</a></dt>
-<dd><p>Calculates the sinkrate for a given altitude</p>
+<dd><p>Calculates the sink rate for a given altitude.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns<span class="colon">:</span></dt>
-<dd class="field-odd"><p>sinkrate for the given altitude</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>height</strong> – The altitude in feet.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The sink rate for the given altitude.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -439,17 +442,16 @@ If its above the limit there will be a warning printed</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.stash_requests.get_data_series">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.stash_requests.</span></span><span class="sig-name descname"><span class="pre">get_data_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/stash_requests.html#get_data_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.stash_requests.get_data_series" title="Permalink to this definition">#</a></dt>
-<dd><p>Requests the data values for all sensors in the sensor_dict and append them to the sensor in the sensor_dict
-the data is requested through the data_id which must be contained in the dictionary first</p>
+<dd><p>Requests the data values for all sensors in the sensor_dict and appends them to each sensor in the sensor_dict. The data is requested using the data_id, which must already be present in the dictionary for each sensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_dict</strong> – dictionary containing all sensors we what the data from</p></li>
-<li><p><strong>client</strong> – stash client object to interact with the stash</p></li>
+<li><p><strong>sensor_dict</strong> – A dictionary containing all sensors from which we want to retrieve data.</p></li>
+<li><p><strong>client</strong> – A stash client object used to interact with the stash.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>sensor_dict filled with the data foreach sensor in the dictionary</p>
+<dd class="field-even"><p>The updated sensor_dict with the data values appended to each sensor in the dictionary.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -457,19 +459,17 @@ the data is requested through the data_id which must be contained in the diction
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.stash_requests.get_data_series_id">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.stash_requests.</span></span><span class="sig-name descname"><span class="pre">get_data_series_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight_id</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/stash_requests.html#get_data_series_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.stash_requests.get_data_series_id" title="Permalink to this definition">#</a></dt>
-<dd><p>Requests the data_id for all sensors in the sensor_dict and append them to the sensor in the sensor_dict
-the data_id is requested through the name of the sensor and the flight_id which identifies the flight form which we want
-to get the data</p>
+<dd><p>Requests the data_id for all sensors in the sensor_dict and appends them to each sensor in the sensor_dict. The data_id is obtained using the sensor’s name and the flight_id, which identifies the flight from which we want to retrieve the data.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_dict</strong> – dictionary containing all sensors we what the data from</p></li>
-<li><p><strong>client</strong> – stash client object to interact with the stash</p></li>
-<li><p><strong>flight_id</strong> – string with the id of the flight</p></li>
+<li><p><strong>sensor_dict</strong> – A dictionary containing all sensors from which we want to retrieve data.</p></li>
+<li><p><strong>client</strong> – A stash client object used to interact with the stash.</p></li>
+<li><p><strong>flight_id</strong> – A string representing the ID of the flight.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>sensor_dict filled with the data_id foreach sensor in the dictionary</p>
+<dd class="field-even"><p>The updated sensor_dict with the data_id appended to each sensor in the dictionary.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -477,20 +477,17 @@ to get the data</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.stash_requests.get_series_connector_id">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.stash_requests.</span></span><span class="sig-name descname"><span class="pre">get_series_connector_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">flight_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/stash_requests.html#get_series_connector_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.stash_requests.get_series_connector_id" title="Permalink to this definition">#</a></dt>
-<dd><p>For each sensor in the sensor_dictionary we what to find the series_connector_id by searching for the name of the sensor
-and the flight_id as parent of the sensor, the flight_id identifies the flight we want to find.
-All series_connector_id’s where inserted to the dictionary of the sensor and we return the dictionary of dictionaries as
-sensor_dict</p>
+<dd><p>For each sensor in the sensor_dictionary, we want to find the series_connector_id by searching for the sensor’s name and the flight_id as the parent of the sensor. The flight_id identifies the flight we want to find. All series_connector_id’s are inserted into the sensor dictionary as dictionaries. The updated sensor dictionary is then returned.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_dict</strong> – dictionary containing all sensors we what the data from</p></li>
-<li><p><strong>flight_id</strong> – string with the id of the flight</p></li>
-<li><p><strong>client</strong> – stash client object to interact with the stash</p></li>
+<li><p><strong>sensor_dict</strong> – A dictionary containing all sensors from which we want to retrieve data.</p></li>
+<li><p><strong>flight_id</strong> – A string representing the ID of the flight.</p></li>
+<li><p><strong>client</strong> – A stash client object used to interact with the stash.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>sensor_dict contains all sensors and there series_connector_id’s in the dictionaries form the sensors</p>
+<dd class="field-even"><p>The updated sensor_dict containing all sensors and their corresponding series_connector_id’s.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -498,17 +495,16 @@ sensor_dict</p>
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.stash_requests.get_time_series">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.stash_requests.</span></span><span class="sig-name descname"><span class="pre">get_time_series</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/stash_requests.html#get_time_series"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.stash_requests.get_time_series" title="Permalink to this definition">#</a></dt>
-<dd><p>Requests the time values for all sensors in the sensor_dict and append them to the sensor in the sensor_dict
-the time data is requested through the time_id which must be contained in the dictionary first</p>
+<dd><p>Requests the time values for all sensors in the sensor_dict and appends them to each sensor in the sensor_dict. The time data is requested using the time_id, which must be already present in the dictionary for each sensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_dict</strong> – dictionary containing all sensors we what the data from</p></li>
-<li><p><strong>client</strong> – stash client object to interact with the stash</p></li>
+<li><p><strong>sensor_dict</strong> – A dictionary containing all sensors from which we want to retrieve data.</p></li>
+<li><p><strong>client</strong> – A stash client object used to interact with the stash.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>sensor_dict filled with the time values foreach sensor in the dictionary</p>
+<dd class="field-even"><p>The updated sensor_dict with the time values appended to each sensor in the dictionary.</p>
 </dd>
 </dl>
 </dd></dl>
@@ -516,20 +512,16 @@ the time data is requested through the time_id which must be contained in the di
 <dl class="py function">
 <dt class="sig sig-object py" id="terra_safe.stash_requests.get_time_series_id">
 <span class="sig-prename descclassname"><span class="pre">terra_safe.stash_requests.</span></span><span class="sig-name descname"><span class="pre">get_time_series_id</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sensor_dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">client</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/terra_safe/stash_requests.html#get_time_series_id"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#terra_safe.stash_requests.get_time_series_id" title="Permalink to this definition">#</a></dt>
-<dd><p>Requests the time_id for all sensors in the sensor_dict and append them to the sensor in the sensor_dict
-the time_id is requested through the name of the sensor and the series_connector_id which connects the data and time of
-the flight form which we want to get the time.
-And we also check in the request if the time_id is for an object that represents the time.
-The series_connector_id must already exists in the dictionary for each sensor.</p>
+<dd><p>Requests the time_id for all sensors in the sensor_dict and appends them to each sensor in the sensor_dict. The time_id is obtained by using the sensor’s name and the series_connector_id, which connects the data and time of the flight from which we want to retrieve the time. Additionally, the function checks if the time_id represents an object that represents time. It is assumed that the series_connector_id already exists in the dictionary for each sensor.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>sensor_dict</strong> – dictionary containing all sensors we what the data from</p></li>
-<li><p><strong>client</strong> – stash client object to interact with the stash</p></li>
+<li><p><strong>sensor_dict</strong> – A dictionary containing all sensors from which we want to retrieve data.</p></li>
+<li><p><strong>client</strong> – A stash client object used to interact with the stash.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>sensor_dict filled with the time_id foreach sensor in the dictionary</p>
+<dd class="field-even"><p>The updated sensor_dict with the time_id appended to each sensor in the dictionary.</p>
 </dd>
 </dl>
 </dd></dl>

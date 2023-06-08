@@ -198,14 +198,13 @@
 
 <div class="viewcode-block" id="setup_sensor_dict"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.setup_sensor_dict">[docs]</a><span class="k">def</span> <span class="nf">setup_sensor_dict</span><span class="p">(</span><span class="n">list_of_sensors</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates a empty subdictionary for each sensor that is in the list of sensors and returns the dictionary with all sensors</span>
-<span class="sd">    and there subdictionaries.</span>
+<span class="sd">    Creates an empty sub-dictionary for each sensor in the list_of_sensors and returns the dictionary with all sensors and their corresponding sub-dictionaries.</span>
 
-<span class="sd">    :param list_of_sensors: list of all sensors that should be used for the program</span>
+<span class="sd">    :param list_of_sensors: A list of sensors to be used in the program.</span>
 
-
-<span class="sd">    :return: sensor_dictionary containing all sensors and there dictionaries which are empty</span>
+<span class="sd">    :return: A sensor_dictionary containing all sensors and their respective empty dictionaries.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 
     <span class="n">sensor_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">list_of_sensors</span><span class="p">:</span>
@@ -214,14 +213,14 @@
 
 <div class="viewcode-block" id="correct_position_values"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.correct_position_values">[docs]</a><span class="k">def</span> <span class="nf">correct_position_values</span><span class="p">(</span><span class="n">normal_value</span><span class="p">,</span> <span class="n">fine_value</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Adds the Latitude/Longitude and the LatitudeFine/LongitudeFine Values for all values in the Array to get more precise</span>
-<span class="sd">    Latitude and Longitude Values</span>
+<span class="sd">    Combines the Latitude/Longitude values and the LatitudeFine/LongitudeFine values from the arrays to obtain more precise latitude and longitude coordinates.</span>
 
-<span class="sd">    :param normal_value: Array of Latitude/Longitude Values</span>
-<span class="sd">    :param fine_value: Array of LatitudeFine/LongitudeFine Values</span>
+<span class="sd">    :param normal_value: An array of Latitude/Longitude values.</span>
+<span class="sd">    :param fine_value: An array of LatitudeFine/LongitudeFine values.</span>
 
-<span class="sd">    :return: Array of a more precise Array for Latitude/Longitude</span>
+<span class="sd">    :return: An array of more precise latitude or longitude coordinates.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">normal_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">normal_value</span><span class="p">)</span>
     <span class="n">fine_array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fine_value</span><span class="p">)</span>
     <span class="n">corrected_vector</span> <span class="o">=</span> <span class="n">normal_array</span> <span class="o">+</span> <span class="n">fine_array</span>
@@ -230,14 +229,15 @@
 
 <div class="viewcode-block" id="corrected_value_to_dict"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.corrected_value_to_dict">[docs]</a><span class="k">def</span> <span class="nf">corrected_value_to_dict</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">reference_time</span><span class="p">,</span> <span class="n">data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Creates a Dictionary for the corrected Sensor with name as Key and the Sub-Elements reference_time and data</span>
+<span class="sd">    Creates a dictionary for the corrected sensor using the sensor name as the key. The dictionary includes the sub-elements &#39;reference_time&#39; and &#39;data&#39;.</span>
 
-<span class="sd">    :param name: String with the Name of the corrected Sensor</span>
-<span class="sd">    :param reference_time: Array of time values</span>
-<span class="sd">    :param data: Array of the data of the corrected Sensor</span>
+<span class="sd">    :param name: A string representing the name of the corrected sensor.</span>
+<span class="sd">    :param reference_time: An array of time values.</span>
+<span class="sd">    :param data: An array containing the data of the corrected sensor.</span>
 
-<span class="sd">    :return: dictionary with one Element that contains the new corrected Sensor</span>
+<span class="sd">    :return: A dictionary with one element that represents the new corrected sensor.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">sensor_dict_content</span> <span class="o">=</span> <span class="p">{</span><span class="n">name</span><span class="p">:</span> <span class="p">{</span><span class="s2">&quot;time&quot;</span><span class="p">:</span> <span class="n">reference_time</span><span class="p">,</span> <span class="s2">&quot;data&quot;</span><span class="p">:</span> <span class="n">data</span><span class="p">}}</span>
     <span class="k">return</span> <span class="n">sensor_dict_content</span></div>
 
@@ -246,13 +246,13 @@
 
 <div class="viewcode-block" id="transform_data"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.transform_data">[docs]</a><span class="k">def</span> <span class="nf">transform_data</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Fills a dictionary with the data and time for the sensors containt in the sensors_dict and also append the corrected</span>
-<span class="sd">    Values for Latitude and Longitude to the dictionary</span>
+<span class="sd">    Populates a dictionary with the data and time for the sensors contained in sensor_dict. Additionally, the corrected values for latitude and longitude are appended to the dictionary.</span>
 
-<span class="sd">    :param sensor_dict: dictionary with the sensor names of the sensor where the data should be stored</span>
+<span class="sd">    :param sensor_dict: A dictionary containing the sensor names where the data should be stored.</span>
 
-<span class="sd">    :return: dictionary with the sensor names and there time and data values</span>
+<span class="sd">    :return: A dictionary with the sensor names and their corresponding time and data values.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 
     <span class="k">for</span> <span class="n">sensor</span> <span class="ow">in</span> <span class="n">sensor_dict</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
         <span class="n">sensor_dict</span><span class="p">[</span><span class="n">sensor</span><span class="p">][</span><span class="s2">&quot;time&quot;</span><span class="p">],</span> <span class="n">sensor_dict</span><span class="p">[</span><span class="n">sensor</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">read_and_downsample</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">[</span><span class="n">sensor</span><span class="p">][</span><span class="s2">&quot;time&quot;</span><span class="p">],</span>
@@ -267,13 +267,14 @@
 
 <div class="viewcode-block" id="read_and_downsample"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.read_and_downsample">[docs]</a><span class="k">def</span> <span class="nf">read_and_downsample</span><span class="p">(</span><span class="n">sensor_time</span><span class="p">,</span> <span class="n">sensor_data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reads the Sensor Values and sample the data down to 1 Hz</span>
+<span class="sd">    Reads the sensor values and downsamples the data to 1 Hz.</span>
 
-<span class="sd">    :param sensor_time: Array with the Time Values of the Sensor</span>
-<span class="sd">    :param sensor_data: Array with the Data of the Sensor</span>
+<span class="sd">    :param sensor_time: An array containing the time values of the sensor.</span>
+<span class="sd">    :param sensor_data: An array containing the data of the sensor.</span>
 
-<span class="sd">    :return: Sampled Array of the time and Sampled Array of the Data</span>
+<span class="sd">    :return: Sampled array of the time values and sampled array of the data.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 
     <span class="n">sampled_time</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">sampled_data</span> <span class="o">=</span> <span class="p">[]</span>
@@ -286,11 +287,11 @@
 
 <div class="viewcode-block" id="slice_calibrationphase"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.slice_calibrationphase">[docs]</a><span class="k">def</span> <span class="nf">slice_calibrationphase</span><span class="p">(</span><span class="n">groundspeed_data</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Remove the calibrationphase from the Data by checking the groundspeed</span>
+<span class="sd">    Removes the calibration phase from the data by checking the groundspeed.</span>
 
-<span class="sd">    :param groundspeed_data: Array of the Groundspeed Data</span>
+<span class="sd">    :param groundspeed_data: An array of groundspeed data.</span>
 
-<span class="sd">    :return: index of the first value where the Groundspeed is bigger than 50</span>
+<span class="sd">    :return: The index of the first value where the groundspeed is greater than 50.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">for</span> <span class="n">groundspeed_index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">groundspeed_data</span><span class="p">)):</span>
@@ -300,12 +301,12 @@
 
 <div class="viewcode-block" id="get_height_above_groundlevel"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.get_height_above_groundlevel">[docs]</a><span class="k">def</span> <span class="nf">get_height_above_groundlevel</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">,</span> <span class="n">position_elevation</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculates the height above groundlevel and appends it to the position_elevation dictionary</span>
+<span class="sd">    Calculates the height above ground level and appends it to the position_elevation dictionary.</span>
 
-<span class="sd">    :param sensor_dict: dictionary with the data and time for each sensor</span>
-<span class="sd">    :param position_elevation: dictionary with the terrain height for each time</span>
+<span class="sd">    :param sensor_dict: A dictionary containing the data and time for each sensor.</span>
+<span class="sd">    :param position_elevation: A dictionary containing the terrain height for each time.</span>
 
-<span class="sd">    :return: position_elevation dictionary with the height above groundlevel appended to the dictionary as Height</span>
+<span class="sd">    :return: The position_elevation dictionary with the height above ground level appended as &#39;Height&#39;.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">position_elevation</span><span class="p">)):</span>
@@ -317,12 +318,13 @@
 
 <div class="viewcode-block" id="get_missing_flight_data"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.get_missing_flight_data">[docs]</a><span class="k">def</span> <span class="nf">get_missing_flight_data</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Gets the position_elevation dictionary with height above groundlevel and terrain height without the calibration phase</span>
+<span class="sd">    Retrieves the position_elevation dictionary with height above ground level and terrain height, excluding the calibration phase.</span>
 
-<span class="sd">    :param sensor_dictionary: Dictionary of all sensors used and there data and time</span>
+<span class="sd">    :param sensor_dictionary: A dictionary containing the data and time for all used sensors.</span>
 
-<span class="sd">    :return: position_elevation Dictionary with height above groundlevel and terrain height without the calibration phase</span>
+<span class="sd">    :return: The position_elevation dictionary with height above ground level and terrain height, excluding the calibration phase.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 
     <span class="n">position_elevation</span> <span class="o">=</span> <span class="n">get_geo_data</span><span class="p">(</span><span class="n">sensor_dict</span><span class="p">[</span><span class="s2">&quot;IRH_LONG&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">],</span> <span class="n">sensor_dict</span><span class="p">[</span><span class="s2">&quot;IRH_LAT&quot;</span><span class="p">][</span><span class="s2">&quot;data&quot;</span><span class="p">],</span>
                                       <span class="n">sensor_dict</span><span class="p">[</span><span class="s2">&quot;IRH_LAT&quot;</span><span class="p">][</span><span class="s2">&quot;time&quot;</span><span class="p">])</span>
@@ -334,14 +336,15 @@
 
 <div class="viewcode-block" id="get_geo_data"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.get_geo_data">[docs]</a><span class="k">def</span> <span class="nf">get_geo_data</span><span class="p">(</span><span class="n">long</span><span class="p">,</span> <span class="n">lat</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Splits the longitude and latitude and into list with the size 100 elements for the api request to get the terrain height</span>
+<span class="sd">    Splits the longitude and latitude values into lists with a size of 100 elements each for the API request to retrieve the terrain height.</span>
 
-<span class="sd">    :param long: list of the longitude values form the flight</span>
-<span class="sd">    :param lat: list of the latitude values form the flight</span>
-<span class="sd">    :param time: list of the time values form the flight</span>
+<span class="sd">    :param long: A list of longitude values from the flight.</span>
+<span class="sd">    :param lat: A list of latitude values from the flight.</span>
+<span class="sd">    :param time: A list of time values from the flight.</span>
 
-<span class="sd">    :return: position_elevation Dictionary with the Terrain height for given latitude and longitude</span>
+<span class="sd">    :return: A position_elevation dictionary with the terrain height for the given latitude and longitude.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">position_elevation</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">long</span><span class="p">),</span> <span class="mi">100</span><span class="p">):</span>
         <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">long</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span><span class="p">)</span> <span class="o">&gt;=</span> <span class="mi">100</span><span class="p">:</span>
@@ -354,11 +357,11 @@
 
 <div class="viewcode-block" id="get_limits"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.get_limits">[docs]</a><span class="k">def</span> <span class="nf">get_limits</span><span class="p">():</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Calculates the limit for the sinkrate for the elevation between 20 and 3500ft and returns a dictionary with the values</span>
-<span class="sd">    for the elevation and the sinkrate limits</span>
+<span class="sd">    Calculates the sink rate limits for elevations between 20 and 3500 ft and returns a dictionary with the elevation and corresponding sink rate limits.</span>
 
-<span class="sd">    :return: vertvel_threshold_dict dictionary with the sinkrate limits</span>
+<span class="sd">    :return: A vertvel_threshold_dict dictionary with the sink rate limits.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">vertvel_threshold_dict</span> <span class="o">=</span> <span class="p">{}</span>
     <span class="k">for</span> <span class="n">rad_alt</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3501</span><span class="p">):</span>
         <span class="n">sinkrate</span> <span class="o">=</span> <span class="n">get_sink_rate</span><span class="p">(</span><span class="n">rad_alt</span><span class="p">)</span>
@@ -368,16 +371,15 @@
 
 <div class="viewcode-block" id="get_list_elevation"><a class="viewcode-back" href="../../terra_safe.html#terra_safe.data_handling.get_list_elevation">[docs]</a><span class="k">def</span> <span class="nf">get_list_elevation</span><span class="p">(</span><span class="n">lat_list</span><span class="p">,</span> <span class="n">long_list</span><span class="p">,</span> <span class="n">timestamp</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    Reqeust the terrain height form &#39;opentopodata.org&#39; for max 100 values in one request and creates a dictionary element</span>
-<span class="sd">    with the elevation, latitude, longitude and time for each request and appends this dictionary element to the elevation</span>
-<span class="sd">    dictionary</span>
+<span class="sd">    Requests the terrain height from &#39;opentopodata.org&#39; for a maximum of 100 values in one request. It creates a dictionary element containing the elevation, latitude, longitude, and time for each request and appends this dictionary element to the elevation dictionary.</span>
 
-<span class="sd">    :param lat_list: latitude list max 100 elements</span>
-<span class="sd">    :param long_list: longitude list max 100 elements</span>
-<span class="sd">    :param timestamp: time list max 100 elements</span>
+<span class="sd">    :param lat_list: A list of latitude values (maximum 100 elements).</span>
+<span class="sd">    :param long_list: A list of longitude values (maximum 100 elements).</span>
+<span class="sd">    :param timestamp: A list of time values (maximum 100 elements).</span>
 
-<span class="sd">    :return: dictionary with elevation, latitude, longitude and time for each request in the lists</span>
+<span class="sd">    :return: A dictionary with elevation, latitude, longitude, and time for each request in the lists.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
 
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">lat_list</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">len</span><span class="p">(</span><span class="n">long_list</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lat_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">long_list</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">100</span><span class="p">):</span>
         <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Check Lists, Value not Accepted&quot;</span><span class="p">)</span>
